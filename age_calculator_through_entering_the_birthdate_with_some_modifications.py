@@ -8,7 +8,7 @@ class App:
     def __init__(self):
         # initialized window
         self.master = tk.Tk()
-        self.master.geometry('280x300')
+        self.master.geometry('400x300') 
         self.master.configure(bg="lightblue")
         self.master.resizable(0, 0)
         self.master.title('Age Calculator')
@@ -94,6 +94,70 @@ class App:
                 self.statement = tk.Label(text=f"{nameValue.get()}'s birth month cannot parse to int.", font="courier 10", bg="lightblue")
                 self.statement.grid(row=6, column=1, pady=15)
                 return False
+            
+        def get_zodiac_sign(day, month):
+            astro_sign = ["Capricorn", "Aquarius", "Pisces", "Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo", "Libra", "Scorpio", "Sagittarius"]    
+            if month == 1:
+                if day < 20:
+                    astro_sign_index = astro_sign[0]
+                else:
+                    astro_sign_index = astro_sign[1]    
+            elif month == 2:
+                if day < 19:
+                    astro_sign_index = astro_sign[1]
+                else:
+                    astro_sign_index = astro_sign[2]
+            elif month == 3:
+                if day < 21:
+                    astro_sign_index = astro_sign[2]
+                else:
+                    astro_sign_index = astro_sign[3]    
+            elif month == 4:
+                if day < 20:
+                    astro_sign_index = astro_sign[3]
+                else:
+                    astro_sign_index = astro_sign[4]    
+            elif month == 5:
+                if day < 21:
+                    astro_sign_index = astro_sign[4]
+                else:
+                    astro_sign_index = astro_sign[5]    
+            elif month == 6:
+                if day < 21:
+                    astro_sign_index = astro_sign[5]
+                else:
+                    astro_sign_index = astro_sign[6]    
+            elif month == 7:
+                if day < 23:
+                    astro_sign_index = astro_sign[6]
+                else:
+                    astro_sign_index = astro_sign[7]    
+            elif month == 8:
+                if day < 23:
+                    astro_sign_index = astro_sign[7]
+                else:
+                    astro_sign_index = astro_sign[8]    
+            elif month == 9:
+                if day < 23:
+                    astro_sign_index = astro_sign[8]
+                else:
+                    astro_sign_index = astro_sign[9]    
+            elif month == 10:
+                if day < 23:
+                    astro_sign_index = astro_sign[9]
+                else:
+                    astro_sign_index = astro_sign[10]    
+            elif month == 11:
+                if day < 22:
+                    astro_sign_index = astro_sign[10]
+                else:
+                    astro_sign_index = astro_sign[11]
+            elif month == 12:
+                if day < 22:
+                    astro_sign_index = astro_sign[11]
+                else:
+                    astro_sign_index = astro_sign[0]                
+            return astro_sign_index        
 
         # defining the function for calculating age
         def ageCalc():
