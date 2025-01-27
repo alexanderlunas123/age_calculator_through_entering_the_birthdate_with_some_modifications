@@ -8,7 +8,7 @@ class App:
     def __init__(self):
         # initialized window
         self.master = tk.Tk()
-        self.master.geometry('400x300') 
+        self.master.geometry('600x300') 
         self.master.configure(bg="lightblue")
         self.master.resizable(0, 0)
         self.master.title('Age Calculator')
@@ -170,7 +170,8 @@ class App:
                 age = today.year - birthDate.year
                 if today.month < birthDate.month or today.month == birthDate.month and today.day < birthDate.day:
                     age -= 1
-                self.statement = tk.Label(text=f"{nameValue.get()}'s age is {age}.", font="courier 10", bg="lightblue")
+                zodiac_sign = get_zodiac_sign(int(self.dayEntry.get()), int(self.monthEntry.get()))        
+                self.statement = tk.Label(text=f"{nameValue.get()}'s age is {age}. Zodiac Sign: {zodiac_sign}.", font="courier 10", bg="lightblue")
                 self.statement.grid(row=6, column=1, pady=15)
 
         # create a button for calculating age
